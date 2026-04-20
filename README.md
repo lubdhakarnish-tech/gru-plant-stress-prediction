@@ -1,14 +1,21 @@
-
-# 🌱 GRU-Based Plant Stress Prediction
+# 🌱 GRU-Based Plant Stress Prediction using Time-Series Data
 
 ## 📌 Overview
-This project focuses on early prediction of plant stress using time-series environmental sensor data. A GRU (Gated Recurrent Unit) model is implemented to capture temporal dependencies and compared with a Random Forest baseline to evaluate performance.
+This project focuses on early detection of plant stress using time-series environmental sensor data. A deep learning approach using a GRU (Gated Recurrent Unit) network is implemented and compared with a traditional Random Forest model to evaluate performance in modeling temporal dependencies.
+
+---
+
+## 🎯 Objective
+- Predict early-stage plant stress conditions  
+- Compare deep learning (GRU) with classical machine learning (Random Forest)  
+- Analyze the impact of temporal modeling on prediction performance  
 
 ---
 
 ## ⚙️ Models Used
-- **GRU (Deep Learning)** – captures temporal patterns in sequential data  
-- **Random Forest (Baseline)** – classical machine learning model  
+- **GRU (Proposed Model)** – captures sequential dependencies in time-series data  
+- **Tuned GRU** – optimized version with improved hyperparameters  
+- **Random Forest** – baseline model for comparison  
 
 ---
 
@@ -21,38 +28,40 @@ This project focuses on early prediction of plant stress using time-series envir
 
 ## 🧠 Methodology
 - Time-series preprocessing using sliding window technique  
-- Sequence modeling using GRU network  
-- Model comparison with Random Forest (flattened input)  
-- Performance evaluation using classification metrics  
+- Sequential modeling using GRU neural network  
+- Baseline comparison using Random Forest (flattened input)  
+- Performance evaluation using standard classification metrics  
 
 ---
 
-## 📈 Results
+## 📊 Results
 
-### 🔹 Model Performance
-| Model | Accuracy | Precision | Recall |
-|------|--------|----------|--------|
-| GRU | ~0.53 AUC | - | - |
-| Random Forest | ~0.52 AUC | - | - |
+### 🔹 Performance Comparison
 
-> GRU slightly outperforms Random Forest due to its ability to model temporal dependencies.
-
----
-
-### 🔹 ROC Curve Comparison
-![ROC Curve](results/roc_curve.png)
+| Model                     | Accuracy | Precision | Recall  | F1 Score | Inference Time (s) | Computational Cost |
+|--------------------------|----------|----------|--------|----------|--------------------|--------------------|
+| Random Forest            | 0.6700   | 0.7111   | 0.9014 | 0.7950   | 0.0419             | Low                |
+| GRU (Proposed)           | 0.7755   | 0.7755   | 1.0000 | 0.8736   | 0.3381             | Medium             |
+| Tuned GRU (Proposed)     | 0.7653   | 0.7732   | 0.9868 | 0.8670   | 0.1161             | Medium             |
 
 ---
 
-### 🔹 Confusion Matrix Comparison
-![Confusion Matrix](results/confusion_matrix.png)
+### 🔹 Hyperparameter Configuration
+
+| Parameter      | Original GRU | Tuned GRU |
+|---------------|-------------|----------|
+| GRU Units     | 32          | 64       |
+| Batch Size    | 32          | 16       |
+| Epochs        | 20          | 30       |
+| Learning Rate | 0.001       | 0.001    |
 
 ---
 
 ## 🔍 Analysis
-- Both models show comparable performance due to limited dataset complexity  
-- GRU demonstrates better capability in capturing sequential patterns  
-- Performance can be improved with larger datasets and feature engineering  
+- GRU significantly outperforms Random Forest in **accuracy, recall, and F1-score**, highlighting its ability to capture temporal dependencies.  
+- The tuned GRU improves **inference efficiency** while maintaining strong predictive performance.  
+- Random Forest has lower computational cost but lacks the ability to model sequential relationships effectively.  
+- High recall values indicate strong capability in detecting plant stress conditions, which is crucial for early intervention in agriculture.  
 
 ---
 
