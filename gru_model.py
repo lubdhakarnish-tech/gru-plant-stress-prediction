@@ -1,6 +1,5 @@
 # =========================================
 # GRU-Based Plant Stress Prediction
-# Full Evaluation + Comparison + Timing
 # =========================================
 
 import pandas as pd
@@ -134,9 +133,7 @@ plt.xlabel("Predicted")
 plt.ylabel("Actual")
 plt.show()
 
-# =========================================
 # FINAL SUMMARY
-# =========================================
 
 print("\n=== FINAL COMPARISON ===")
 print("Random Forest:", rf_metrics)
