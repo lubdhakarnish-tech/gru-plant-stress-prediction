@@ -1,5 +1,7 @@
 numpy
 pandas
-matplotlib
 scikit-learn
 tensorflow
+matplotlib
+seaborn
+openpyxl
